@@ -22,12 +22,22 @@
         variant="primary"
         @click="submitAnswer"
         :disabled="selectedIndex === null || answered"
+        
       >
         Submit
       </b-button>
-      <b-button @click="next" variant="success">
+
+
+      <b-button 
+      @click="next" 
+      variant="success"
+    
+      >
         Next
       </b-button>
+
+     
+
     </b-jumbotron>
   </div>
 </template>
@@ -38,17 +48,20 @@ export default {
   props: {
     currentQuestion: Object,
     next: Function,
-    increment: Function
+    increment: Function,
+    questionLength: Number
   },
   data: function() {
     return {
       selectedIndex: null,
       correctIndex: null,
       shuffledAnswers: [],
-      answered: false
+      answered: false,
+      displaySubmitBtn: this.questionLength
     }
   },
   computed: {
+    
     answers() {
       let answers = [...this.currentQuestion.incorrect_answers]
       answers.push(this.currentQuestion.correct_answer)
@@ -66,7 +79,11 @@ export default {
     }
   },
   methods: {
+
     selectAnswer(index) {
+      
+    
+
       this.selectedIndex = index
     },
     submitAnswer() {
@@ -95,7 +112,8 @@ export default {
         answerClass = 'incorrect'
       }
       return answerClass
-    }
+    },
+     
   }
 }
 </script>
@@ -119,5 +137,8 @@ export default {
 }
 .incorrect {
   background-color: red;
+}
+.hide {
+  display: none;
 }
 </style>

@@ -14,6 +14,7 @@
                :currentQuestion="questions[index]"
                :next="next"
                :increment="increment"
+               :questionLength="questions.length"
                />
           </b-col>
         </b-row>
@@ -67,7 +68,10 @@ export default {
       })
       .then((jsonData) => {
         this.questions  = jsonData.results;
+        //console.log(this.questions.length)
+
       })
+      
 
     
   },
