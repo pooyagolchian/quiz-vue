@@ -1,6 +1,6 @@
 <template>
   <div class="question-box-container">
-    <b-jumbotron>
+    <b-jumbotron class="mt-5">
       <template slot="lead">
         {{ currentQuestion.question }}
       </template>

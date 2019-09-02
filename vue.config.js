@@ -1,2 +1,4 @@
-module.exports = { publicPath: 'https://pooyagolchian.ir/' }
+module.exports = { 
+    publicPath: './' 
+}
 
