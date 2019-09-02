@@ -4,12 +4,11 @@
 
       <b-container class="bv-example-row">
         <b-row>
-         <b-col class="m-auto "> 
+         <b-col class="m-auto"> 
               <QuestionBox
+                v-if="questions.length"
                :currentQuestion="questions[index]"
                :next="next"
-              
-              
                />
           </b-col>
         </b-row>
@@ -23,6 +22,7 @@
 <script>
 import Header from './components/Header'
 import QuestionBox from './components/QuestionBox'
+
 
 
 export default {
