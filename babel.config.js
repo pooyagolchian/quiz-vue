@@ -2,5 +2,5 @@ module.exports = {
   presets: [
     '@vue/app'
   ],
-  baseUrl: './'
+  baseUrl: '.'
 }
